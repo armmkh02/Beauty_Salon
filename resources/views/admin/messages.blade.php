@@ -31,7 +31,7 @@ use App\Models\Order;
             <td>{{ $order->lastName       }}</td>
             <td>{{ $order->email          }}</td>
             <td>{{ $order->phone          }}</td>
-            <td>{{ $order->templateNumber }}</td>
+            <td>{{ $order->image_id       }}</td>
             <td><img src="{{ asset($order->path) }}" width="50px; height:85px" alt=""></td>
             <td>
                     <div class="checkbox">

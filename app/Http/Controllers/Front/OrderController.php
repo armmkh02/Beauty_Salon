@@ -39,27 +39,27 @@ class OrderController extends Controller
         $user_id        =  $request['user_id'];
 
         $details = [
-            'title'         => "$firstname" . '  ' . "$lastname ",
-            'body'          => "Templates №:".  "  " . "$templateNumber",
-            'image_text'    => "Templates Image:",
-            'path'          => "$them_path",
-            'email'         => "$email",
-            'phone'         => "$phone",
-            'message'       => "$message"
+            'title'      => "$firstname" . '  ' . "$lastname ",
+            'body'       => "Templates №:".  "  " . "$templateNumber",
+            'image_text' => "Templates Image:",
+            'path'       => "$them_path",
+            'email'      => "$email",
+            'phone'      => "$phone",
+            'message'    => "$message"
         ];
 
-        Mail::to('valodik@gmail.com')->send(new \App\Mail\SendEmail($details));
-        Mail::to($request['email'])->send(new \App\Mail\SendEmail($details));
+        // Mail::to('valodik@gmail.com')->send(new \App\Mail\SendEmail($details));
+        // Mail::to($request['email'])->send(new \App\Mail\SendEmail($details));
 
         Order::create([
-            'templateNumber'  => $templateNumber,
-            'firstName'       => $firstname     ,
-            'lastName'        => $lastname      ,
-            'email'           => $email         ,
-            'phone'           => $phone         ,
-            'message'         => $message       ,
-            'status'          => $status        ,
-            'user_id'         => $user_id       ,
+            'image_id'  => $templateNumber,
+            'firstName' => $firstname     ,
+            'lastName'  => $lastname      ,
+            'email'     => $email         ,
+            'phone'     => $phone         ,
+            'message'   => $message       ,
+            'status'    => $status        ,
+            'user_id'   => $user_id       ,
         ]);
 
         return redirect()->back();

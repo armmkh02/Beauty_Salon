@@ -31,8 +31,8 @@ class AdminController extends Controller
     public function messages()
     {
         $orders = DB::table('images')
-                     ->join('orders', 'images.id', '=', 'orders.templateNumber')
-                     ->select('orders.*', 'images.path', 'orders.templateNumber')
+                     ->join('orders', 'images.id', '=', 'orders.image_id')
+                     ->select('orders.*', 'images.path', 'orders.image_id')
                      ->get();
 
             //    dd($orders);
@@ -66,8 +66,8 @@ class AdminController extends Controller
      */
     public function updateImage (Request $id)
     {
-        $id     = $id['id'];
-        $image  = DB::table('images')->find($id);
+        $id    = $id['id'];
+        $image = DB::table('images')->find($id);
 
         return view('admin.update' , compact('image'));
     }

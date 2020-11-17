@@ -7,6 +7,6 @@ $(document).ready(function(){
            url: "/test-admin/change-status/" + id,
            success: function(result){
              console.log(result);
-            }});
+        }});
   });
 })

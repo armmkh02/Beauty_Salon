@@ -29,13 +29,15 @@
             </div>
             <div class="col-md-8">
               <div class="card mb-3">
-                <div class="card-body">
+                <form action="{{ route('user-update' ) }}" method="POST" class="card-body">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $user->id }}">
                   <div class="row">
                     <div class="col-sm-3">
                       <h6 class="mb-0">Full Name</h6>
                     </div>
-                    <div class="col-sm-9 text-secondary">
-                        {{ $user->name }}
+                    <div  class="col-sm-9 text-secondary">
+                       <input type="text" style="border-radius:10%;" value="{{ $user->name }}" name="name">
                     </div>
                   </div>
                   <hr>
@@ -44,16 +46,7 @@
                       <h6 class="mb-0">Email</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ $user->email }}
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Phone</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                        {{ $user->phone }}
+                        <input type="text" style="border-radius:10%; width:300px;" value="{{ $user->email }}" name="email">
                     </div>
                   </div>
                   <hr>
@@ -62,11 +55,12 @@
                       <h6 class="mb-0">Mobile</h6>
                     </div>
                     <div class="col-sm-9 text-secondary">
-                        {{ $user->phone }}
+                        <input type="text" style="border-radius:10%;" value="{{ $user->phone }}" name="phone">
                     </div>
                   </div>
                   <hr>
-                </div>
+                  <input type="submit" name="submit" value="Save" class="btn btn-success" style="margin-left:15%;">
+                </form>
               </div>
             </div>
             <table class="table">
@@ -81,21 +75,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($array as $arr)
+                    @foreach ($orders as $order)
                         <tr>
-                            <td scope="row">{{ $arr['lastName'] }}</td>
-                            <td scope="row">{{ $arr['email'] }}</td>
-                            <td scope="row">{{ $arr['phone'] }}</td>
-                            <td scope="row">{{ $arr['message'] }}</td>
-                            <td>{{ $arr['images']->name }}</td>
-                            <td><img src="{{ $arr['images']->path }}"  width="100px; height:170px" alt=""></td>
+                            <td scope="row">{{ $order->firstName }} {{ $order->lastName }} </td>
+                            <td scope="row">{{ $order->email }}</td>
+                            <td scope="row">{{ $order->phone }}</td>
+                            <td scope="row">{{ $order->message }}</td>
+                            <td>{{ $order->name }}</td>
+                            <td><img src="{{ $order->path }}"  width="100px; height:170px" alt=""></td>
                         </tr>
                   @endforeach
                 </tbody>
               </table>
           </div>
           <div class="d-flex justify-content-center">
-            {{ $array->links() }}
+            {{ $orders->links() }}
            </div>
         </div>
 

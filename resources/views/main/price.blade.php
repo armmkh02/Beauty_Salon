@@ -23,7 +23,6 @@
 
 
 
-{{-- </style><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> --}}
 	<link rel="stylesheet" href="{{ asset('front/assets/css/main.css')}}">
 
 
@@ -35,10 +34,10 @@
 
 				<div class="row">
 					<div class="col-md-6">
-						<p class="lead">No hidden fees. You can also cancel anytime!</p>
+						<b><i><p style="color: orange" class="lead">No hidden fees. You can also cancel anytime!</p></i></b>
 
 						<div class="form-group">
-							<button type="button" style="background-image:linear-gradient(to left, #ee390f 0%, #f9b700 51%, #ee390f 100%);"  class="btn_8">Upgrade</button>
+							<button type="button" style="background-image:linear-gradient(to left, #ee390f 0%, #f9b700 51%, #ee390f 100%);"  class="btn_1">Upgrade</button>
 						</div>
 					</div>
 
@@ -55,7 +54,7 @@
 	<div class="shell">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1">
-				<div class="section-content">
+				<div style="margin-left: 47%;" class="section-content">
 					<h2 class="h2">Whats included</h2>
 					<p>VEVS business websites go with all auxiliary services such as domain, hosting, backup, ongoing maintenance and support. A great one-place solution!</p>
 				</div>

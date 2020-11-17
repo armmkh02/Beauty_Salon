@@ -64,7 +64,7 @@
                             </li>
                             @if (Auth::user())
                                 <li class="d-none d-lg-block">
-                                    <form action="{{ route('profile' , Auth::user()->id) }}" method="POST">
+                                    <form action="{{ route('profile' , Auth::user()->id) }}" method="get">
                                         @csrf
                                             <input type="submit" class="btn_1" name="logout" value="Profile">
                                     </form>

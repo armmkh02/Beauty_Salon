@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\User;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -26,14 +27,9 @@ class Order extends Model
         1 => self::Cheked   ,
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
     public function image()
     {
-        return $this->belongsTo(Image::class);
+        return $this->hasOne(Image::class);
     }
 
 }

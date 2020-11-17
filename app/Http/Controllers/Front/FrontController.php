@@ -111,29 +111,33 @@ class FrontController extends Controller
         $array = [];
 
         $user      = User::find($id);
-        $orders    =  $user->orders()->with('image');
-        dd($orders);
-        // $templates = DB::table('orders')->where('user_id' , $id)->get();
+        // $orders    = $user->orders()->with('image');
+        $orders = DB::table('users')
+                     ->join('orders', 'users.id', '=', 'orders.user_id')
+                     ->join('images', 'orders.image_id', '=', 'images.id')
+                     ->select('orders.*', 'users.*', 'images.*', 'orders.user_id')
+                     ->paginate(2);
 
-        // foreach ($orders as $key => $order)
-        // {
-        //     $images = DB::table('images')->where('id' , $order->templateNumber)->first();
-
-        //     $array[$key]           = $order->toArray();
-        //     $array[$key]['images'] = $images;
-        // }
-
-        // $myCollectionObj = collect($array);
-
-        // $array = $this->paginate($myCollectionObj);
-        // dd($data);
-        return view('main.profile' , compact('user' , 'array'));
+        return view('main.profile' , compact('user' , 'orders'));
     }
 
-    // public function paginate($items, $perPage = 1, $page = null, $options = [])
-    // {
-    //     $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-    //     $items = $items instanceof Collection ? $items : Collection::make($items);
-    //     return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
-    // }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Admin  $admin
+     * @return \Illuminate\Http\Response
+     */
+    public function userUpdate(Request $request)
+    {
+        $request       = $request->except('_token');
+        $user['name']  = $request['name'];
+        $user['email'] = $request['email'];
+        $user['phone'] = $request['phone'];
+
+        User::find($request['id'])->update($user);
+
+        return redirect()->back();
+    }
+
+
 }
