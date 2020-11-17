@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use App\Models\Order;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class FrontController extends Controller
 {
@@ -105,20 +108,32 @@ class FrontController extends Controller
      */
     public function profile($id)
     {
-        $arr = [];
+        $array = [];
 
         $user      = User::find($id);
-        $orders    =  $user->orders;
-        $templates = DB::table('orders')->where('user_id' , $id)->get();
+        $orders    =  $user->orders()->with('image');
+        dd($orders);
+        // $templates = DB::table('orders')->where('user_id' , $id)->get();
 
+        // foreach ($orders as $key => $order)
+        // {
+        //     $images = DB::table('images')->where('id' , $order->templateNumber)->first();
 
-        foreach ($orders as $key => $order)
-        {
-            $images = DB::table('images')->where('id' , $order->templateNumber)->first();
+        //     $array[$key]           = $order->toArray();
+        //     $array[$key]['images'] = $images;
+        // }
 
-            $arr[$key]           = $order->toArray();
-            $arr[$key]['images'] = $images;
-        }
-        return view('main.profile' , compact('user' , 'arr'));
+        // $myCollectionObj = collect($array);
+
+        // $array = $this->paginate($myCollectionObj);
+        // dd($data);
+        return view('main.profile' , compact('user' , 'array'));
     }
+
+    // public function paginate($items, $perPage = 1, $page = null, $options = [])
+    // {
+    //     $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+    //     $items = $items instanceof Collection ? $items : Collection::make($items);
+    //     return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    // }
 }

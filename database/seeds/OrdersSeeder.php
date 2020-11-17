@@ -22,7 +22,7 @@ class OrdersSeeder extends Seeder
                     'lastName'       => 'Flanik'         ,
                     'email'          => 'gfgg@gmail.com' ,
                     'phone'          => '+374444450'     ,
-                    'templateNumber' => '3'              ,
+                    'image_id'       => '3'              ,
                     'message'        => 'dfdsfsdf'       ,
                     'status'         => Order::STATUS[0] ,
 

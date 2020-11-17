@@ -15,7 +15,7 @@ class Order extends Model
         'message'    ,
         'status'     ,
         'user_id'    ,
-        'templateNumber'
+        'image_id'
     ];
 
     const Uncheked = 'new';
@@ -30,5 +30,10 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
-    
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class);
+    }
+
 }

@@ -19,7 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('lastName');
             $table->string('email');
             $table->string('phone');
-            $table->integer('templateNumber');
+            $table->unsignedInteger('image_id');
+            $table->foreign('image_id')->references('id')->on('images');
             $table->string('message');
             $table->string('status');
             $table->unsignedBigInteger('user_id')->nullable()->default(null);

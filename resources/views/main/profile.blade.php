@@ -72,22 +72,32 @@
             <table class="table">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">#ID</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Message</th>
                     <th scope="col">Image_Name</th>
                     <th scope="col">Image</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($arr as $ar)
+                    @foreach ($array as $arr)
                         <tr>
-                            <td scope="row">{{ $ar['images']->id }}</td>
-                            <td>{{ $ar['images']->name }}</td>
-                            <td><img src="{{ $ar['images']->path }}"  width="100px; height:170px" alt=""></td>
+                            <td scope="row">{{ $arr['lastName'] }}</td>
+                            <td scope="row">{{ $arr['email'] }}</td>
+                            <td scope="row">{{ $arr['phone'] }}</td>
+                            <td scope="row">{{ $arr['message'] }}</td>
+                            <td>{{ $arr['images']->name }}</td>
+                            <td><img src="{{ $arr['images']->path }}"  width="100px; height:170px" alt=""></td>
                         </tr>
                   @endforeach
                 </tbody>
               </table>
           </div>
+          <div class="d-flex justify-content-center">
+            {{ $array->links() }}
+           </div>
         </div>
+
     </div>
 @endsection
