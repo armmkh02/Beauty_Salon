@@ -30,7 +30,7 @@
 	<div class="shell">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h2 class="h2">$99 per year</h2>
+				<h2 style="margin-top: revert;" class="h2">$99 per year</h2>
 
 				<div class="row">
 					<div class="col-md-6">

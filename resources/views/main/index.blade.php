@@ -85,12 +85,13 @@
                 </div>
             </div>
             <div class="row">
+                @foreach ($templates as $template)
                 <div class="col-sm-6 col-lg-4">
                     <div class="single_special_cource">
-                        <img src="{{ asset('front/assets/them-img/them4.png') }}" style="max-height: 600px;width:360px;" class="special_img" alt="">
+                        <img src="{{ asset($template->path) }}" style="max-height: 600px;width:360px;" class="special_img" alt="">
                         <div class="special_cource_text">
-                            <a href="{{ route('index4') }}" class="btn_4">View Demo</a>
-                            <a href="{{ route('order' , '4') }}"  class="btn_4">To Order</a>
+                            <a href="{{ route('index' . $template->id) }}" class="btn_4">View Demo</a>
+                            <a href="{{ route('order' , $template->id) }}"  class="btn_4">To Order</a>
                             <h4>$130.00</h4>
                             <a href="course-details.html"><h3>Web Development</h3></a>
                             <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
@@ -114,71 +115,9 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="{{ asset('front/assets/them-img/them9.png') }}" style="max-height: 600px;width:360px;" class="special_img" alt="">                        <div class="special_cource_text">
-                            <a href="{{ route('index9') }}" class="btn_4">View Demo</a>
-                            <a href="{{ route('order' , '9') }}"  class="btn_4">To Order</a>
-                            <h4>$130.00</h4>
-                            <a href="course-details.html"><h3>Web Development</h3></a>
-                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="{{ asset('front/assets/img/author/author_1.png') }}" alt="">
-                                    <div class="author_info_text">
-                                        <p>Conduct by:</p>
-                                        <h5><a href="#">James Well</a></h5>
-                                    </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/star.svg') }}" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="single_special_cource">
-                        <img src="{{ asset('front/assets/them-img/them3.png') }}" style="max-height: 600px;width:360px;" class="special_img" alt="">                        <div class="special_cource_text">
-                            <a href="{{ route('index3') }}" class="btn_4">View Demo</a>
-                            <a href="{{ route('order' , '3') }}"  class="btn_4">To Order</a>
-                            <h4>$160.00</h4>
-                            <a href="course-details.html"> <h3>Web UX/UI Design </h3></a>
-                            <p>Which whose darkness saying were life unto fish wherein all fish of together called</p>
-                            <div class="author_info">
-                                <div class="author_img">
-                                    <img src="{{ asset('front/assets/img/author/author_2.png') }}" alt="">
-                                    <div class="author_info_text">
-                                        <p>Conduct by:</p>
-                                        <h5><a href="#">James Well</a></h5>
-                                    </div>
-                                </div>
-                                <div class="author_rating">
-                                    <div class="rating">
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/color_star.svg') }}" alt=""></a>
-                                        <a href="#"><img src="{{ asset('front/assets/img/icon/star.svg') }}" alt=""></a>
-                                    </div>
-                                    <p>3.8 Ratings</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

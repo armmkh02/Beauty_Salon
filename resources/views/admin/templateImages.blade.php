@@ -1,4 +1,6 @@
-    @extends('layouts.admin')
+@extends('layouts.admin')
+
+@section('title', 'Admin Beauty Templates')
 
 @section('content')
 

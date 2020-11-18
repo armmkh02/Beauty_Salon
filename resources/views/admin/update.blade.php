@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title', 'Admin Beauty Templates')
+
 @section('content')
 <div class="row" style="width: 70%; margin-left:20%;">
 

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\User;
 use App\Models\Image;
 use Illuminate\Database\Eloquent\Model;
 

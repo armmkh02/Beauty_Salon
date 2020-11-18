@@ -1,4 +1,6 @@
 @extends('layouts.admin')
+
+@section('title', 'Admin Beauty Templates')
 @php
 use App\Models\Order;
 @endphp
@@ -24,7 +26,6 @@ use App\Models\Order;
         </thead>
         <tbody>
     @foreach ($orders as $order)
-    {{-- @if ($order->status == Order::STATUS[0])  style="background-color: aqua;" @endif --}}
         <tr >
             <th>{{ $order->id             }}</th>
             <td>{{ $order->firstName      }}</td>
@@ -39,7 +40,6 @@ use App\Models\Order;
                     <input data-id="{{ $order->id }}" class="checking" type="checkbox" @if ($order->status != Order::STATUS[0])  checked @endif data-toggle="toggle" data-onstyle="success" data-offstyle="danger" value="Disabled">
                     </label>
                      </div>
-
             </td>
             <td><input type="checkbox" name="ids[]" class="selectall" value="{{ $order->id }}" /></td>
         </tr>

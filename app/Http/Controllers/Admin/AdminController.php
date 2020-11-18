@@ -85,14 +85,13 @@ class AdminController extends Controller
         $image         = $request->except('_token');
         $id            = $request['id'];
         $image         = $request['posters'];
-        $path          = storage_path('app'.DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'them-img'.DIRECTORY_SEPARATOR);
+        $path          = public_path('front'.DIRECTORY_SEPARATOR.'assets'.DIRECTORY_SEPARATOR.'them-img'.DIRECTORY_SEPARATOR);
         $extension     = $image->getClientOriginalExtension();
         $img_name      = $image->getClientOriginalName();
         $img_name      = md5($img_name.microtime());
         $img_full_name = $img_name.'.'.$extension;
         $res           = $image->move($path, $img_full_name);
-        $image         = "/storage/them-img/".$img_full_name;
-
+        $image         = "front/assets/them-img/".$img_full_name;
         DB::table('images')->where('id' , $id)->update(['path' => $image]);
         $images        = DB::table('images')->get();
 

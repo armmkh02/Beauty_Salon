@@ -18,7 +18,9 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('main.index');
+        $templates = DB::table('images')->skip(4)->take(3)->get();
+
+        return view('main.index' , compact('templates'));
     }
 
     /**
@@ -29,9 +31,11 @@ class FrontController extends Controller
      */
     public function templates()
     {
-        $templates = DB::table('images')->get();
+        $templates1 = DB::table('images')->take(4)->get();
+        $templates2 = DB::table('images')->skip(4)->take(4)->get();
+        $templates3 = DB::table('images')->skip(8)->take(2)->get();
 
-        return view('main.templates' , compact('templates'));
+        return view('main.templates' , compact('templates1' , 'templates2' , 'templates3'));
     }
 
     /**

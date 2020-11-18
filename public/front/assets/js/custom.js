@@ -11,7 +11,7 @@ $(".check-them").click(function (params) {
 
     $(".them-wrapper .them-img").append('<img src="'+ src +'" style="width:350px;height:526px;"  alt="">')
     $(".them-wrapper .them-title").html(name)
-    $("#themId").val(id)
+    $("#image_id").val(id)
 
 })
 

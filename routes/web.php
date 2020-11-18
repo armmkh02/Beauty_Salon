@@ -13,18 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/profile', function () {
-//     return view('main.profile');
-// });
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Route::get('/gggg' , 'HomeController@index')->name('gggg');
-// Route::post('/send', 'SendEmailController@send')->name('sendEmail');
-
-// Route::group(['namespace' => 'Front'], function () {
-//     Route::post('/send', 'OrderController@send')->name('sendEmail');
-// });
-
 Auth::routes();
 
 //admin part

@@ -48,7 +48,7 @@
                     <div class="col-lg-8">
                         <form class="" action="{{ route('sendEmail') }}" method="post" id="contactForm" novalidate="novalidate">
                             @csrf
-                            <input type="hidden" name="themplate" id="themId">
+                            <input type="hidden" name="image_id" id="image_id">
                             @if (Auth::user())
                                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             @endif
@@ -118,7 +118,7 @@
                             <h3 class="them-title"></h3>
 
                         </div>
-                    
+
                     </div>
                 </div>
             </div>
