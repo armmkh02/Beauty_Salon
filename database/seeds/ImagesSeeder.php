@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Image;
 
 class ImagesSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class ImagesSeeder extends Seeder
     public function run()
     {
 
-        DB::table('images') ->insert([
+        Image::insert([
             [
                 'path'   => 'front/assets/them-img/them1.png' ,
                 'name'  => 'Them1'

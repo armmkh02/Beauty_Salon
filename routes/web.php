@@ -46,7 +46,7 @@ Route::group(['namespace' => 'Front'], function () {
     Route::get('/pricing'        , 'FrontController@pricing')->name('pricing');
     Route::get('/contact'        , 'FrontController@contact')->name('contact');
     Route::get('/about-us'       , 'FrontController@AboutUs')->name('about-us');
-    Route::get('/profile{id}'    , 'FrontController@profile')->name('profile');
+    Route::get('/profile'        , 'FrontController@profile')->name('profile');
     Route::get('/order/{id?}'    , 'FrontController@order')->name('order');
     Route::get('/login-register' , 'FrontController@loginRegister')->name('login-register');
     Route::post('/user-update'   , 'FrontController@userUpdate')->name('user-update');

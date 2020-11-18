@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="{{ asset('front/assets/css/main.css')}}">
 
 
-<div class="section section-need-plan section-need-plan-secondary">
+<div class="section section-need-plan section-need-plan-secondary" >
 	<div class="shell">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
@@ -50,7 +50,7 @@
 	</div>
 </div>
 
-<div class="section section-compare-plans section-bg" id="compare-section">
+<div class="section section-compare-plans section-bg" id="compare-section"  >
 	<div class="shell">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1">

@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="name" required autocomplete="name" autofocus  class="form-control  @error('phone') is-invalid @enderror" placeholder="Phone Number(+1)">
+                                            <input type="text" name="phone" required autocomplete="phone" autofocus  class="form-control  @error('phone') is-invalid @enderror" placeholder="Phone Number(+1)">
                                             @error('phone')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

@@ -5,10 +5,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
-use App\Models\Order;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
-use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Auth;
 
 class FrontController extends Controller
 {
@@ -106,19 +103,20 @@ class FrontController extends Controller
      * @param  \App\Models\Admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function profile($id)
+    public function profile()
     {
         $array = [];
+            $user  = User::findorFail(Auth::user()->id);
+            // $orders    = $user->orders()->with('image')->get();
 
-        $user      = User::find($id);
-        // $orders    = $user->orders()->with('image');
-        $orders = DB::table('users')
-                     ->join('orders', 'users.id', '=', 'orders.user_id')
-                     ->join('images', 'orders.image_id', '=', 'images.id')
-                     ->select('orders.*', 'users.*', 'images.*', 'orders.user_id')
-                     ->paginate(2);
+            $orders = DB::table('users')
+                         ->join('orders', 'users.id', '=', 'orders.user_id')->where('users.id' , Auth::user()->id)
+                         ->join('images', 'orders.image_id', '=', 'images.id')
+                         ->select('orders.*' , 'images.*')
+                         ->paginate(1);
 
-        return view('main.profile' , compact('user' , 'orders'));
+            return view('main.profile' , compact('user' , 'orders'));
+
     }
 
     /**

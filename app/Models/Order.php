@@ -19,17 +19,17 @@ class Order extends Model
         'image_id'
     ];
 
-    const Uncheked = 'new';
-    const Cheked   = 'cheked';
+    const Unchecked = 'new';
+    const Checked   = 'checked';
 
     public const STATUS = [
-        0 => self::Uncheked ,
-        1 => self::Cheked   ,
+        0 => self::Unchecked ,
+        1 => self::Checked   ,
     ];
 
     public function image()
     {
-        return $this->hasOne(Image::class);
+        return $this->belongsTo(Image::class);
     }
 
 }

@@ -7,11 +7,12 @@ use App\Models\Order;
 
 class Image extends Model
 {
-    protected $fillable = [
+    protected $table = "images";
+    // protected $fillable = [
 
-        'name' ,
-        'path' ,
+    //     'name' ,
+    //     'path' ,
 
-    ];
+    // ];
 
 }

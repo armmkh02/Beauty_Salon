@@ -13,7 +13,7 @@ class OrdersSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 10 ; $i++)
+        for ($i=1; $i <=10 ; $i++)
         {
 
             DB::table('orders')->insert([
@@ -22,7 +22,7 @@ class OrdersSeeder extends Seeder
                     'lastName'       => 'Flanik'         ,
                     'email'          => 'gfgg@gmail.com' ,
                     'phone'          => '+374444450'     ,
-                    'image_id'       => '3'              ,
+                    'image_id'       => $i               ,
                     'message'        => 'dfdsfsdf'       ,
                     'status'         => Order::STATUS[0] ,
 

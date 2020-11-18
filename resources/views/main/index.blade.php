@@ -74,7 +74,7 @@
     <!-- member_counter counter end -->
 
     <!--::review_part start::-->
-    <section class="special_cource padding_top">
+    <section class="special_cource padding_top" style="margin-top: 100px;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-5">
@@ -186,7 +186,7 @@
 
 
     <!--::review_part start::-->
-    <section class="learning_part testimonial_part">
+    <section class="learning_part testimonial_part" style="margin-top: 100px;">
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-5">

@@ -21,26 +21,24 @@ class OrderController extends Controller
             'first_name'     => 'required|max:255',
             'last_name'      => 'required|max:255',
             // 'email'          => 'required|max:255',
-            'themplate'      => 'required|max:255',
+            'image_id'       => 'required|max:255',
             'phone'          => 'required|max:255',
             // 'message'        => 'required|max:255'
         ]);
 
-        $templateNumber = $request['themplate'];
         $firstname      = $request['first_name'];
         $lastname       = $request['last_name'];
         $email          = $request['email'];
         $phone          = $request['phone'];
         $message        = $request['message'];
-        $them_id        = $request['themplate'];
-        $themplate      = DB::table('images')->find($them_id);
-        $them_path      = $themplate->path;
+        $them_id        = $request['image_id'];
+        $them_path      = DB::table('images')->find($them_id)->path;
         $status         =  Order::STATUS[0];
         $user_id        =  $request['user_id'];
 
         $details = [
             'title'      => "$firstname" . '  ' . "$lastname ",
-            'body'       => "Templates №:".  "  " . "$templateNumber",
+            'body'       => "Templates №:".  "  " . "$them_id",
             'image_text' => "Templates Image:",
             'path'       => "$them_path",
             'email'      => "$email",
@@ -48,11 +46,11 @@ class OrderController extends Controller
             'message'    => "$message"
         ];
 
-        // Mail::to('valodik@gmail.com')->send(new \App\Mail\SendEmail($details));
-        // Mail::to($request['email'])->send(new \App\Mail\SendEmail($details));
+        Mail::to('valodik@gmail.com')->send(new \App\Mail\SendEmail($details));
+        Mail::to($request['email'])->send(new \App\Mail\SendEmail($details));
 
         Order::create([
-            'image_id'  => $templateNumber,
+            'image_id'  => $them_id       ,
             'firstName' => $firstname     ,
             'lastName'  => $lastname      ,
             'email'     => $email         ,

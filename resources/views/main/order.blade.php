@@ -69,7 +69,7 @@
     <form class="form-contact contact_form" action="{{ route('sendEmail') }}" method="post" id="contactForm" novalidate="novalidate">
         @csrf
     <p class="contact-title" style="font-size: 17px;">Template № {{ $template->id }}</p>
-                
+        <input type="hidden" name="image_id" value="{{ $template->id }}">
     </div>
     <div class="col-lg-8">
         <div class="row">
@@ -109,7 +109,7 @@
             <span class="contact-info__icon">
             <div class="media-body">
                 <h3>
-                    <img src="{{ asset($template->path) }}" style=" margin-left:26%; width:60%;height:600px;" alt="Avatar" class="avatar">
+                    <img src="{{ asset($template->path) }}" style=" margin-left:26%; width:300px; height:510px;" alt="Avatar" class="avatar">
                 </h3>
             </div>
         </div>

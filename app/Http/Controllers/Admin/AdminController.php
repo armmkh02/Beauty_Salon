@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Admin;
 use Illuminate\Http\Request;
-// use Request;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +33,6 @@ class AdminController extends Controller
                      ->select('orders.*', 'images.path', 'orders.image_id')
                      ->get();
 
-            //    dd($orders);
         return  view('admin.messages', compact('orders'));
     }
 

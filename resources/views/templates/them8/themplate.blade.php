@@ -34,7 +34,7 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-8 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
           	<div class="icon">
-          		<a href="index.html" class="logo">
+          		<a href="{{ url('them8') }}" class="logo">
           			<span class="flaticon-flower"></span>
           			<h1>Pretty</h1>
           		</a>

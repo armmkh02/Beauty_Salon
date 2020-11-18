@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
 
 </head>
+<body>
 <header class="main_menu home_menu">
     <div class="container">
         <div class="row align-items-center">
@@ -64,10 +65,7 @@
                             </li>
                             @if (Auth::user())
                                 <li class="d-none d-lg-block">
-                                    <form action="{{ route('profile' , Auth::user()->id) }}" method="get">
-                                        @csrf
-                                            <input type="submit" class="btn_1" name="logout" value="Profile">
-                                    </form>
+                                <a href="{{ route('profile') }}"  class="btn_1" name="profile" >Profile </a>
                                 </li>
                                 <li class="d-none d-lg-block">
                                     <form action="{{ route('logout') }}" method="POST">
@@ -88,9 +86,11 @@
         </div>
     </div>
 </header>
-@yield('content')
-<footer class="footer-area" style="max-height: 40px;">
 
+@yield('content')
+
+
+<footer class="footer-area" style="padding-top: 300px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -109,9 +109,9 @@
                             <i class="ti-heart" aria-hidden="true"></i> by
                             <a href="http://amoriltd.co.uk/" target="_blank">Amori: LTD</a>
                         </span>
-                        <span style="margin-left: 170px;">
-                            <span> Phone :</span> +2 36 265 (8060)
-                            <span> Email : </span>info@colorlib.com
+                        <span style="margin-left: 100px;">
+                            <span> Phone :</span> +374 77226167
+                            <span> Email : </span> developer.armanmkhitaryan@gmail.com
                         </span>
                         </p>
                         </div>
@@ -146,5 +146,5 @@
 <!-- custom js -->
 <script src="{{ asset('front/assets/js/custom.js') }}"></script>
 
-
+</body>
 </html>
