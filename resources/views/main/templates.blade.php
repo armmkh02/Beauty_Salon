@@ -20,33 +20,13 @@
     </div>
 </section>
 <!-- breadcrumb start-->
-<style>
 
-.ggg {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.template:hover .img-responsive {
-  opacity: 0.5;
-}
-
-.template:hover .ggg {
-  opacity: 1;
-}
-</style>
 
     <div class="section_tittle text-center" style="margin-top:3%;">
         <h2>All Templates</h2>
     </div>
 
-<div class="container">
+<div class="container" style="margin-bottom: 25%;">
     <div class="row">
         @foreach ($templates1 as $template)
             <div class="template col-3">
@@ -67,9 +47,8 @@
         @endforeach
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<div class="container">
+
+<div class="container" style="margin-bottom: 25%;">
     <div class="row">
         @foreach ($templates2 as $template)
             <div class="template col-3">
@@ -91,9 +70,8 @@
 
     </div>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br>
-<div class="container">
+
+<div class="container" style="margin-bottom: 15%;">
     <div class="row">
         @foreach ($templates3 as $template)
             <div class="template col-3">

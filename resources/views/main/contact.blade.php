@@ -23,7 +23,7 @@
 <!-- breadcrumb start-->
 
 <!-- ================ contact section start ================= -->
-<section class="contact-section section_padding">
+<section class="contact-section section_padding" style="margin-bottom: -17%;">
     <div class="container">
         <div class="row">
             <div class="col-12">

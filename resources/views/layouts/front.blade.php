@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>@yield('title')</title>
-    <link rel="icon" href="{{ asset('front/assets/img/favicon.png') }}">
+    <link rel="icon" href="{{ asset('front/assets/img/mainicon.png') }}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/slick.css') }}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('front/assets/css/main2.css') }}">
 
 </head>
 <body>
@@ -90,7 +91,7 @@
 @yield('content')
 
 
-<footer class="footer-area" style="padding-top: 300px;">
+<footer class="footer-area">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">

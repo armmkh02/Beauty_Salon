@@ -18,12 +18,10 @@
                 <div class="col-lg-6 col-xl-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>Every child yearns to learn</h5>
-                            <h1>Making Your Childs
-                                World Better</h1>
-                            <p>Replenish seasons may male hath fruit beast were seas saw you arrie said man beast whales
-                                his void unto last session for bite. Set have great you'll male grass yielding yielding
-                                man</p>
+                            <h5>Beauty Salon Templates</h5>
+                            <h1>BRING YOUR BUSINESS ONLINE
+                                with Amori:LTD Website Builder</h1>
+                            <p>The fastest and breeziest way to boost sales and enhance customer experience.</p>
                             <a href="{{ route('templates') }}" class="btn_1">View Templates </a>
                             <a href="{{ route('contact')  }}" class="btn_2">Get Contact </a>
                         </div>
@@ -44,17 +42,15 @@
             <div class="row align-items-sm-center align-items-lg-stretch">
                 <div class="col-md-7 col-lg-7">
                     <div class="learning_img">
-                        <img src="{{ asset('front/assets/img/learning_img.png') }}" alt="">
+                        <img src="{{ asset('front/assets/img/img1.webp') }}" alt="">
                     </div>
                 </div>
                 <div class="col-md-5 col-lg-5">
                     <div class="learning_member_text">
                         <h5>About us</h5>
-                        <h2>Learning with Love
-                            and Laughter</h2>
-                        <p>Fifth saying upon divide divide rule for deep their female all hath brind Days and beast
-                            greater grass signs abundantly have greater also
-                            days years under brought moveth.</p>
+                        <h2>Manage your business digitally</h2>
+                        <p>Thanks to the mobile-friendly design of VEVS content management system, you can keep track of all bookings, sales, and customer inquiries on the go,
+                            from any device. Unchain yourself from the desk and hold your business at your fingertips!</p>
                         <ul>
                             <li><span class="ti-pencil-alt"></span>Him lights given i heaven second yielding seas
                                 gathered wear</li>

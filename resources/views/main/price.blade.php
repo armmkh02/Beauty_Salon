@@ -26,10 +26,10 @@
 	<link rel="stylesheet" href="{{ asset('front/assets/css/main.css')}}">
 
 
-<div class="section section-need-plan section-need-plan-secondary" >
+<div class="section section-need-plan section-need-plan-secondary container" >
 	<div class="shell">
 		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-12 col-md-offset-1">
 				<h2 style="margin-top: revert;" class="h2">$99 per year</h2>
 
 				<div class="row">
@@ -50,10 +50,10 @@
 	</div>
 </div>
 
-<div class="section section-compare-plans section-bg" id="compare-section"  >
+<div class="section section-compare-plans section-bg " id="compare-section"  >
 	<div class="shell">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-sm-10 col-sm-offset-1">
+			<div class="col-lg-10 col-lg-offset-2 col-sm-10 col-sm-offset-1">
 				<div style="margin-left: 47%;" class="section-content">
 					<h2 class="h2">Whats included</h2>
 					<p>VEVS business websites go with all auxiliary services such as domain, hosting, backup, ongoing maintenance and support. A great one-place solution!</p>
@@ -62,7 +62,7 @@
 		</div>
 	</div>
 
-	<div class="table-compare-holder">
+	<div class="table-compare-holder container">
 		<div class="table-compare-sec">
 			<div class="table-compare-row-sec">
 				<div class="table-compare-col-sec">
